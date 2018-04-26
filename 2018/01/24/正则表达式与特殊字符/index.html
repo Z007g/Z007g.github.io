@@ -16,15 +16,23 @@
   
   
   
-    <meta name="description" content="知识点
-Object.defineProperty()介绍
-vue双向数据绑定原理
+    <meta name="description" content="正则表达式的特殊字符
+1.原子的筛选方式
 
-Object.defineProperty()介绍 {:&amp;.flexbox.vleft}
-概念 : Object.defineProperty() 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性， 并返回这个对象。
-语法 : Object.defineProperty(对象, 属性...">
+|   匹配两个或者多个分支选择
+[]  匹配方括号中的任意一个原子
+[^] 匹配除括号中的原子之外的任意字符
+
+
+2.元字符(原子的集合)
+
+.  匹配除换行符之外的任意字符
+\d 匹配任意一个十进制数字,即[0-9]
+\D 匹配任意一个非十进制数字,即[^0-9]
+\s 匹配一个不可见原子,即[\f\n\r\t\v]
+\S 匹配一个可见原子,即...">
   
-  <title>vue双向数据绑定的原理 [ Knight ]</title>
+  <title>正则表达式与特殊字符 [ Knight ]</title>
   
   
     <link rel="shortcut icon" href="/favicon.ico">
@@ -43,13 +51,22 @@ Object.defineProperty()介绍 {:&amp;.flexbox.vleft}
 <body>
 <div class="side-navigate hide-area">
   
-  
-    <div class="item next">
-      <a href="/2018/01/24/正则表达式与特殊字符/">
+    <div class="item prev">
+      <a href="/2018/12/03/vue双向数据绑定的原理/">
         <div class="item-icon"></div>
       </a>
       <div class="item-title">
-        正则表达式与特殊字符
+        vue双向数据绑定的原理
+      </div>
+    </div>
+  
+  
+    <div class="item next">
+      <a href="/2018/01/10/继承与闭包/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        继承与闭包
       </div>
     </div>
   
@@ -124,9 +141,9 @@ Object.defineProperty()介绍 {:&amp;.flexbox.vleft}
       
       
   <article id="post">
-    <h1>vue双向数据绑定的原理</h1>
+    <h1>正则表达式与特殊字符</h1>
     <p class="page-title-sub">
-      <span id = "post-title-date">撰写于 2018-12-03</span>
+      <span id = "post-title-date">撰写于 2018-01-24</span>
       
         <span id = "post-title-updated">修改于 2018-04-26</span>
       
@@ -134,24 +151,61 @@ Object.defineProperty()介绍 {:&amp;.flexbox.vleft}
       
     </p>
     
-    <h1 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h1><ul>
-<li>Object.defineProperty()介绍</li>
-<li>vue双向数据绑定原理</li>
+    <h1 id="正则表达式的特殊字符"><a href="#正则表达式的特殊字符" class="headerlink" title="正则表达式的特殊字符"></a>正则表达式的特殊字符</h1><ul>
+<li><p>1.原子的筛选方式</p>
+<ul>
+<li>|   匹配两个或者多个分支选择</li>
+<li>[]  匹配方括号中的任意一个原子</li>
+<li>[^] 匹配除括号中的原子之外的任意字符</li>
 </ul>
-<h1 id="Object-defineProperty-介绍-amp-flexbox-vleft"><a href="#Object-defineProperty-介绍-amp-flexbox-vleft" class="headerlink" title="Object.defineProperty()介绍 {:&amp;.flexbox.vleft}"></a>Object.defineProperty()介绍 {:&amp;.flexbox.vleft}</h1><ul>
-<li>概念 : Object.defineProperty() 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性， 并返回这个对象。</li>
-<li>语法 : Object.defineProperty(对象, 属性, 属性的描述)</li>
-<li>属性的描述 <ul>
-<li>value : 该属性对应的值.</li>
-<li>configurable : 当且仅当该属性的 configurable 为 true 时，该属性描述符才能够被改变，也能够被删除。默认为 false。</li>
-<li>enumerable 当且仅当该属性的 enumerable 为 true 时，该属性才能够出现在对象的枚举属性中。默认为 false。</li>
-<li>writable 当且仅当该属性的 writable 为 true 时，该属性才能被赋值运算符改变。默认为 false。</li>
+</li>
+<li><p>2.元字符(原子的集合)</p>
+<ul>
+<li>.  匹配除换行符之外的任意字符</li>
+<li>\d 匹配任意一个十进制数字,即[0-9]</li>
+<li>\D 匹配任意一个非十进制数字,即[^0-9]</li>
+<li>\s 匹配一个不可见原子,即[\f\n\r\t\v]</li>
+<li>\S 匹配一个可见原子,即[^\f\n\r\t\v]</li>
+<li>\w 匹配任意一个数字,字母或下划线[0-9a-zA-Z_]</li>
+<li>\W 匹配任意一个非数字,字母或下划线[^0-9a-zA-Z_]</li>
 </ul>
 </li>
 </ul>
-<h1 id="vue双向数据绑定原理"><a href="#vue双向数据绑定原理" class="headerlink" title="vue双向数据绑定原理"></a>vue双向数据绑定原理</h1><ul>
-<li>数据劫持: vue.js 则是采用数据劫持结合发布者-订阅者模式的方式，通过Object.defineProperty()来劫持各个属性的setter，getter，在数据变动时发布消息给订阅者，触发相应的监听回调。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function defineReactive(data, key, val) &#123;</span><br><span class="line">    //observe(val); // 监听子属性</span><br><span class="line">    Object.defineProperty(data, key, &#123;</span><br><span class="line">        enumerable: true, // 可枚举</span><br><span class="line">        configurable: false, // 不能再define</span><br><span class="line">        get: function() &#123;</span><br><span class="line">            return val;</span><br><span class="line">        &#125;,</span><br><span class="line">        set: function(newVal) &#123;</span><br><span class="line">            console.log(&apos;哈哈哈，监听到值变化了 &apos;, val, &apos; --&gt; &apos;, newVal);</span><br><span class="line">            val = newVal;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>3.量词</p>
+<ul>
+<li>{n} 表示其前面的原子恰好出现 n次</li>
+<li>{n,} 表示其前面的原子最少出现 n 次</li>
+<li>{n,m} 表示其前面的原子最少出现 n 次,最多出现 m 次</li>
+<li><ul>
+<li>匹配0次,1次或者多次其之前的原子,即{0}</li>
+</ul>
 </li>
+<li>+ 匹配1次或者多次之前的原子,即{1,}</li>
+<li>? 匹配0次或者1次其之前的原子,即{0,1}</li>
+</ul>
+</li>
+<li><p>4.边界控制</p>
+<ul>
+<li>^ 匹配字符串开始的位置</li>
+<li>$ 匹配字符串结尾的位置</li>
+<li>()匹配其中的整体为一个原子</li>
+</ul>
+</li>
+</ul>
+<h1 id="简单正则表达式"><a href="#简单正则表达式" class="headerlink" title="简单正则表达式"></a>简单正则表达式</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//1.构造函数  RegExp()</span><br><span class="line"> var str = &apos;HeLlo World&apos;;</span><br><span class="line"></span><br><span class="line"> //&apos;Hello World&apos;  找出有没有 l 字母</span><br><span class="line"> var reg1 = new RegExp(&apos;f&apos;);</span><br><span class="line"> //RegExp(检索的条件,检索方式);</span><br><span class="line"> /*</span><br><span class="line">  i  忽略大小写</span><br><span class="line">  g  全局检索</span><br><span class="line">  */</span><br><span class="line"> var reg2 = new RegExp(&apos;l&apos;,&apos;g&apos;);</span><br><span class="line"></span><br><span class="line"> //2.使用字面量进行创建   /条件/方式</span><br><span class="line"> var reg3 = /l/ig;</span><br></pre></td></tr></table></figure>
+<h1 id="正则表达式的常用方法"><a href="#正则表达式的常用方法" class="headerlink" title="正则表达式的常用方法"></a>正则表达式的常用方法</h1><ul>
+<li>1.compile() 编辑   改变正则表达式的筛选条件</li>
+<li>2.match()  通过字符串调用,传入参数正则表达式</li>
+<li>3.replace() 替换</li>
+<li>4.search  查找对应的结果 第一个位置</li>
+<li>5.split  字符串分割</li>
+</ul>
+<h1 id="常用正则表达式"><a href="#常用正则表达式" class="headerlink" title="常用正则表达式"></a>常用正则表达式</h1><ul>
+<li>1.必须是6位数字,第一位不能为0</li>
+<li>2.检测文件的压缩包(zip,rar,gz等)</li>
+<li>3.空格处理</li>
+<li>4.邮箱判断</li>
 </ul>
 
   </article>
@@ -160,18 +214,20 @@ Object.defineProperty()介绍 {:&amp;.flexbox.vleft}
   <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
   <div class="random-toc">
     <h2>目录</h2>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#知识点"><span class="toc-text">知识点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Object-defineProperty-介绍-amp-flexbox-vleft"><span class="toc-text">Object.defineProperty()介绍 {:&amp;.flexbox.vleft}</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#vue双向数据绑定原理"><span class="toc-text">vue双向数据绑定原理</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#正则表达式的特殊字符"><span class="toc-text">正则表达式的特殊字符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#简单正则表达式"><span class="toc-text">简单正则表达式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#正则表达式的常用方法"><span class="toc-text">正则表达式的常用方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#常用正则表达式"><span class="toc-text">常用正则表达式</span></a></li></ol>
   </div>
 </div>
 
   
 <nav id="pagination">
   
-
+    <a href="/2018/12/03/vue双向数据绑定的原理/" class="prev">&larr; 上一篇 vue双向数据绑定的原理</a>
   
 
   
-    <a href="/2018/01/24/正则表达式与特殊字符/" class="next">下一篇 正则表达式与特殊字符 &rarr;</a>
+
+  
+    <a href="/2018/01/10/继承与闭包/" class="next">下一篇 继承与闭包 &rarr;</a>
   
 </nav>
 
