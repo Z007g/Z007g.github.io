@@ -1,12 +1,8 @@
 
 
-  
 
 
 
-
-
-  
 
 
 <!doctype html>
@@ -20,9 +16,11 @@
   
   
   
-    <meta name="description" content="">
+    <meta name="description" content="#二.淡入淡出动画,滑动动画    1.淡入淡出:fadeIn() ; fadeOut() ; fadeToggle();      补充:fadeTo(时间,透明度)改变透明度
+2.滑动:slideDown() ; slideUp() ;slideToggle()
+#三.自定义动画    animate(style(修改类型),speed(时间),easing(动画类型),callback...">
   
-  <title>归档: 2017 [ Knight ]</title>
+  <title>jQuery 自定义动画 [ Knight ]</title>
   
   
     <link rel="shortcut icon" href="/favicon.ico">
@@ -41,6 +39,24 @@
 <body>
 <div class="side-navigate hide-area">
   
+    <div class="item prev">
+      <a href="/2018/01/10/继承与闭包/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        继承与闭包
+      </div>
+    </div>
+  
+  
+    <div class="item next">
+      <a href="/2017/10/21/css文本/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        css文本
+      </div>
+    </div>
   
 </div>
 <div id="outer-container" class="hide-area">
@@ -66,7 +82,7 @@
           </li>
         
           
-            <li class="active">
+            <li>
           
             <a href="/archives">Archives</a>
             
@@ -112,200 +128,70 @@
     <div id="content-inner">
       
       
-  <article>
+  <article id="post">
+    <h1>jQuery 自定义动画</h1>
+    <p class="page-title-sub">
+      <span id = "post-title-date">撰写于 2017-11-25</span>
+      
+        <span id = "post-title-updated">修改于 2018-04-24</span>
+      
+      
+      
+    </p>
     
+    <p>#二.淡入淡出动画,滑动动画<br>    1.淡入淡出:fadeIn() ; fadeOut() ; fadeToggle();<br>      补充:fadeTo(时间,透明度)改变透明度</p>
+<pre><code>2.滑动:slideDown() ; slideUp() ;slideToggle()
+</code></pre><p>#三.自定义动画<br>    animate(style(修改类型),speed(时间),easing(动画类型),callback(回调))</p>
+<pre><code>注意点:修改类型中,不是所有的都可以设置动画,看对应的文档即可(例如background就不可设置动画效果)
+</code></pre><p>#四.jQuery插件<br>    1.它是jQuery扩展,以jQuery代码为核心<br>      1&gt;.jQuery UI<br>      2&gt;.开发者自己也可以封装插件</p>
+<pre><code>2.插件类型: UI类 , 表单验证(validate) , 特效类 , 动画类
 
-  <div id="recent-posts">
-    <h1>归档
-    
-      <span class="posts-count">
-      共
-      6
-      
-        文章
-      
-      </span>
-    
-    </h1>
-    
-    
-      
-      
-        
-      
-      
-    
-      
-      
-      
-    
-      
-      
-      
-    
-      
-      
-      
-    
-      
-      
-      
-    
-      
-      
-      
-    
-    
-    
-      
-      
-        
-        <h3 class="archive-year-title">2017
-        
-          <span class="posts-count">
-          共
-          6
-          
-            文章
-          
-          </span>
-        
-        </h3>
-      
-      <div class="post-title-item">
-  
-  <a href="/2017/11/25/jQuery-自定义动画/">
-  
-    jQuery 自定义动画
-  
-  </a>
-  <p class="page-title-sub">
-    <span id = "post-title-date">11-25</span>
-    
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-    
-      
-      
-      <div class="post-title-item">
-  
-  <a href="/2017/10/21/css文本/">
-  
-    css文本
-  
-  </a>
-  <p class="page-title-sub">
-    <span id = "post-title-date">10-21</span>
-    
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-    
-      
-      
-      <div class="post-title-item">
-  
-  <a href="/2017/10/15/css选择器/">
-  
-    css选择器
-  
-  </a>
-  <p class="page-title-sub">
-    <span id = "post-title-date">10-15</span>
-    
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-    
-      
-      
-      <div class="post-title-item">
-  
-  <a href="/2017/10/07/css继承，优先，层级/">
-  
-    css继承，优先，层级
-  
-  </a>
-  <p class="page-title-sub">
-    <span id = "post-title-date">10-7</span>
-    
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-    
-      
-      
-      <div class="post-title-item">
-  
-  <a href="/2017/10/01/css语法/">
-  
-    css语法
-  
-  </a>
-  <p class="page-title-sub">
-    <span id = "post-title-date">10-1</span>
-    
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-    
-      
-      
-      <div class="post-title-item">
-  
-  <a href="/2017/09/21/html/">
-  
-    html
-  
-  </a>
-  <p class="page-title-sub">
-    <span id = "post-title-date">9-21</span>
-    
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
+3.引用插件
+  1&gt;首先引入jquery.js
+  2&gt;.引入插件
+  3&gt;.引入插件的周边,(皮肤,中文包)
+
+4.jQuery UI官方自己封装的插件
+</code></pre><p>#五.常用插件 easing(动画) ; validate(表单验证)</p>
+<p>#六.自定义插件<br>    1&gt;.jQuery 提供extend() 函数,扩充插件<br>    2&gt;.加fn 表示是局部插件,使用时,必须使用具体的对象调用;<br>       不加fn , 表示是全局插件 通过 $ 调用;</p>
+<p>#七.使用jQuery轮播图(通过动画显示/隐藏进行实现:fadeIn(),fadeOut())<br>   1.布局结构:<br>     <div><br>       图片内容<br>       小圆点<br>       按钮<br>     </div><br>   2.新的知识点:<br>     1&gt;.index()函数用于获取当前jQuery对象中指定DOM元素的索引值。<br>     2&gt;.eq()方法将匹配元素集缩减值指定 index 上的元素。<br>        注意点:如果提供负数，则指示从集合结尾开始的位置，而不是从开头开始.<br>     3&gt;.停止动画stop()</p>
+<p>#八.选项卡<br>    思路:1&gt;.清除以前所有的样式(包括按钮内容)<br>         2&gt;.给当前按钮,内容添加样式</p>
+<p>#九.查找节点,插入内容<br>    1.children() : 向下找一层 ; find() : 内部所有<br>    2.parent() : 向上只找一层 , parents() : 有参数 : 所有指定元素;  没有参数 : 找到所有父级元素<br>    3.next():同级元素的下一个 , prev()同级元素上一个<br>    4.siblings()  : 指定标签的同级元素</p>
+<pre><code>注意点:类似上面这些方法
+      1&gt;加参数,进行条件查找,查找到指定内容
+      2&gt;.不加参数,非条件查找
+</code></pre><p>#十.插入元素<br>    1.<br>    appendTo() : 末尾进行插入<br>    prependTo() : 首位进行插入<br>    注意:参数给上父级元素,往父级元素里面进行插入</p>
+<pre><code>2.insertBefore()插入到指定元素的前面
+
+3.val() 拿到输入框中的值
+</code></pre>
+  </article>
+  <div class="random-toc-area">
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
+  <div class="random-toc">
+    <h2>目录</h2>
     
   </div>
+</div>
 
+  
+<nav id="pagination">
+  
+    <a href="/2018/01/10/继承与闭包/" class="prev">&larr; 上一篇 继承与闭包</a>
+  
 
-  </article>
+  
+
+  
+    <a href="/2017/10/21/css文本/" class="next">下一篇 css文本 &rarr;</a>
+  
+</nav>
+
+  <!-- JiaThis Button BEGIN -->
+
+<!-- JiaThis Button END -->
+
 
       
       
@@ -439,6 +325,8 @@ var unsplashConfig = {"gravity":"north"};
 var turnoffBackgroundImage = false;
 
 
+
+  turnoffBackgroundImage = true;
 
 
 var backgroundColor = "34495E";
