@@ -1,0 +1,448 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta name="author" content="John Doe">
+  
+  
+  
+  
+    <meta name="description" content="1 - CSS文本1.1 - 字体1.1.1 － 改变字号font-size: &lt;absolute-size&gt; | &lt;relative-size&gt; | &lt;length&gt; | &lt;percentage&gt; | inherit&lt;absolute-size&gt;有 small large medium&lt;relative-size&gt;有 ...">
+  
+  <title>css文本 [ Knight ]</title>
+  
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  
+  <link rel="stylesheet" href="/css/random.css">
+<link rel="stylesheet" href="/css/vegas.min.css">
+<link rel="stylesheet" href="/css/highlight-railscasts.css">
+<link rel="stylesheet" href="/css/jquery.fancybox.css">
+<link rel="stylesheet" href="/css/iconfont/iconfont.css">
+<link rel="stylesheet" href="/css/jquery.fancybox-thumbs.css">
+<link rel="stylesheet" href="/css/plyr.css">
+  
+</head>
+
+<body>
+<div class="side-navigate hide-area">
+  
+    <div class="item prev">
+      <a href="/2017/09/21/css选择器/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        css选择器
+      </div>
+    </div>
+  
+  
+    <div class="item next">
+      <a href="/2017/09/06/css语法/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        css语法
+      </div>
+    </div>
+  
+</div>
+<div id="outer-container" class="hide-area">
+<div id="container">
+  <div id="menu-outer" class="slide-down">
+    <div id="menu-inner">
+      <div id="brand">
+        
+        <a onClick="openUserCard()">
+          <img id="avatar" src="http://pic64.nipic.com/file/20150419/17961491_162225443000_2.jpg"/>
+          <div id="homelink">Knight</div>
+        </a>
+      </div>
+      <div id="menu-list">
+        <ul>
+        
+        
+          
+            <li>
+          
+            <a href="/index.html">Home</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/archives">Archives</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/tags">Tags</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/categories">Categories</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/about">About</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="https://github.com/stiekel/hexo-theme-random">Github</a>
+            
+          </li>
+        
+        </ul>
+      </div>
+      <div id="show-menu">
+        <button>Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="content-outer">
+    <div id="content-inner">
+      
+      
+  <article id="post">
+    <h1>css文本</h1>
+    <p class="page-title-sub">
+      <span id = "post-title-date">撰写于 2017-09-11</span>
+      
+        <span id = "post-title-updated">修改于 2018-04-26</span>
+      
+      
+      
+    </p>
+    
+    <h2 id="1-CSS文本"><a href="#1-CSS文本" class="headerlink" title="1 - CSS文本"></a>1 - CSS文本</h2><h3 id="1-1-字体"><a href="#1-1-字体" class="headerlink" title="1.1 - 字体"></a>1.1 - 字体</h3><p><strong>1.1.1 － 改变字号</strong><br><code>font-size: &lt;absolute-size&gt; | &lt;relative-size&gt; | &lt;length&gt; | &lt;percentage&gt; | inherit</code><br><code>&lt;absolute-size&gt;</code>有 small large medium<br><code>&lt;relative-size&gt;</code>有 smaller larger<br>示范：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">font-size 12px</span><br><span class="line">p#sample0</span><br><span class="line">  font-size 16px</span><br><span class="line">p#sample1</span><br><span class="line">  font-size 2em</span><br><span class="line">p#sample2</span><br><span class="line">  font-size 200%</span><br></pre></td></tr></table></figure>
+<p>以上两值在开发中并不常用。2em 与 200% 都为父元素默认大小的两倍（参照物为父元素的字体大小 12px）。</p>
+<p><strong>1.1.2 - 改变字体</strong><br><code>font-family: [ &lt;family-name&gt; | &lt;generic-family&gt; ]</code><br><code>&lt;generic-family&gt;</code>可选选项，但具体使用字体由浏览器决定</p>
+<ul>
+<li>serif</li>
+<li>sans-serif</li>
+<li>cursive</li>
+<li>fantasy</li>
+<li>monospace</li>
+</ul>
+<p>示范：<br><code>font-family: arial, Verdana, sans-serif;</code><br>注意：优先使用靠前的字体</p>
+<p><strong>通用字体系列</strong><br>一直存在混乱的字体命名问题，实际上相同的字体可能有很多不同的称呼，不过 CSS 迈出了勇敢的一步，力图帮助用户代理把这种混乱状况理清楚。</p>
+<p>我们所认为的“字体”可能有许多字体变形组成，分别用来描述粗体、斜体文本，等等。例如，你可能已经对字体 Times 很熟悉。不过，Times 实际上是多种变形的一个组合，包括 TimesRegular、TimesBold、TimesItalic、TimesOblique、TimesBoldItalic、TimesBoldOblique，等等。Times 的每种变形都是一个具体的字体风格（font face），而我们通常认为的 Times 是所有这些变形字体的一个组合。换句话说，Times 实际上是一个字体系列（font family），而不只是单个的字体，尽管我们大多数人都认为字体就是某一种字体。</p>
+<p>除了各种特定字体系列外（如 Times、Verdana、Helvetica 或 Arial），CSS 还定义了 5 种通用字体系列：</p>
+<ul>
+<li><strong>Serif 字体</strong><br>这些字体成比例，而且有衬线。如果字体中的所有字符根据其不同大小有不同的宽度，则成该字符是成比例的。例如，小写 i 和小写 m 的宽度就不同。<br><em>衬线是每个字符笔划末端的装饰，比如小写 l 顶部和底部的短线，或大写 A 两条腿底部的短线</em></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Serif 字体的例子包括</span><br><span class="line">- Times</span><br><span class="line">- Georgia</span><br><span class="line">- New Century Schoolbook</span><br><span class="line">- ...</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>Sans-serif 字体</strong><br>这些字体是成比例的，而且没有上下短线，这种字体系列在计算机屏幕上更容易识读.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Sans-serif 字体的例子包括</span><br><span class="line">- Helvetica</span><br><span class="line">- Geneva</span><br><span class="line">- Verdana</span><br><span class="line">- Arial</span><br><span class="line">- Univers</span><br><span class="line">- ...</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>Monospace 字体</strong><br>Monospace 字体并不是成比例的。它们通常用于模拟打字机打出的文本、老式点阵打印机的输出，甚至更老式的视频显示终端。采用这些字体，每个字符的宽度都必须完全相同，所以小写的 i 和小写的 m 有相同的宽度。这些字体可能有上下短线，也可能没有。如果一个字体的字符宽度完全相同，则归类为 Monospace 字体，而不论是否有上下短线。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Monospace 字体的例子包括 :</span><br><span class="line">- Courier</span><br><span class="line">- Courier New</span><br><span class="line">- Andale Mono</span><br><span class="line">- ...</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>Cursive 字体</strong><br>这些字体试图模仿人的手写体。通常，它们主要由曲线和 Serif 字体中没有的笔划装饰组成。例如，大写 A 再其左腿底部可能有一个小弯，或者完全由花体部分和小的弯曲部分组成。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Cursive 字体的例子包括:</span><br><span class="line">- Zapf Chancery</span><br><span class="line">- Author</span><br><span class="line">- Comic Sans</span><br><span class="line">- ...</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>Fantasy 字体</strong><br>这些字体无法用任何特征来定义，只有一点是确定的，那就是我们无法很容易地将其规划到任何一种其他的字体系列当中。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">这样的字体包括 :</span><br><span class="line">- Western</span><br><span class="line">- Woodblock</span><br><span class="line">- Klingon</span><br><span class="line">- ...</span><br></pre></td></tr></table></figure>
+<p><strong>1.1.3 - 加粗字体</strong><br><code>font-weight: normal | bold | bolder | lighter | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900</code><br>示范：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">font-weight: normal;</span><br><span class="line">font-weight: bold;</span><br></pre></td></tr></table></figure>
+<p><strong>1.1.4 - 倾斜字体</strong><br><code>font-style: normal | italic | oblique | inherit</code><br>italic 使用字体中的斜体，而 oblique 在没有斜体字体时强制倾斜字体。</p>
+<p><strong>1.1.5 - 更改行距</strong><br><code>line-height: normal | &lt;number&gt; | &lt;length&gt; | &lt;percentage&gt;</code><br>normal 值为浏览器决定，在1.1至1.2之间（通常设置值为1.14左右）<br>示范：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/* length 类型 */</span><br><span class="line">line-height: 40px;</span><br><span class="line">line-height: 3em;</span><br><span class="line">/* percentage 类型 */</span><br><span class="line">line-height: 300%;</span><br><span class="line">/* number 类型 */</span><br><span class="line">line-height: 3;</span><br></pre></td></tr></table></figure>
+<p>注意：当line-height为 number 类型时，子类直接继承其数值（不计算直接继承）。 而当为 percentage 类型时，子类则会先计算再显示（先计算后继承）。</p>
+<p><strong>1.1.6 - 字间距（字母间距）</strong><br><code>letter-spacing: normal | &lt;length&gt;</code><br>其用于设置字间距或者字母间距，此属性适用于中文或西文中的字母。 如果需要设置西文中词与词的间距或标签直接的距离则需要使用 word-spacing。<code>word-spacing: normal | &lt;length&gt;</code></p>
+<p><strong>1.1.7 - 改变文字颜色</strong><br><code>color: &lt;color&gt;</code><br>示范：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">element &#123; color: red; &#125;</span><br><span class="line">element &#123; color: #f00; &#125;</span><br><span class="line">element &#123; color: #ff0000; &#125;</span><br><span class="line">element &#123; color: rgb(255,0,0); &#125;</span><br><span class="line">element &#123; color: rgb(100%, 0%, 0%); &#125;</span><br><span class="line">element &#123; color: hsl(0, 100%, 50%); &#125;</span><br><span class="line"></span><br><span class="line">/* 50% translucent */</span><br><span class="line">element &#123; color: rgba(255, 0, 0, 0.5); &#125;</span><br><span class="line">element &#123; color: hsla(0, 100%, 50%, 0.5); &#125;</span><br><span class="line"></span><br><span class="line">/* 全透明 */</span><br><span class="line">element &#123; color: transparent&apos; &#125;</span><br><span class="line">element &#123; color: rgba(0, 0, 0, 0); &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="1-2-对齐方式"><a href="#1-2-对齐方式" class="headerlink" title="1.2 - 对齐方式"></a>1.2 - 对齐方式</h3><p><strong>1.2.1 - 文字居中</strong></p>
+<p><code>text-align: start | end | left | right | center | justify | match-parent | start end</code><br>注意：默认为文本左对齐。</p>
+<p><strong>1.2.2 - 文本垂直对齐</strong><br><code>vertical-align: baseline | sub | super | text-top | text-bottom | middle | top | bottom | &lt;percentage&gt; | &lt;length&gt;</code><br>注意：<code>&lt;percentage&gt;</code>的参照物为line-height</p>
+<p><strong>1.2.3- 文本缩进</strong><br><code>text-indent: &lt;length&gt; | &lt;percentage&gt; &amp;&amp; [ hanging || each-line ]</code><br>注意：缩进两个字可使用 text-indent: 2em;</p>
+<h3 id="1-3-格式处理"><a href="#1-3-格式处理" class="headerlink" title="1.3 - 格式处理"></a>1.3 - 格式处理</h3><p><strong>1.3.1 - 保留空格格式</strong><br><code>white-space: normal | pre | nowrap | pre-wrap | pre-line</code><br>注意：<code>pre</code>行为同 <code>&lt;pre&gt;</code> 一致。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>New lines</th>
+<th>Spaces and tabs</th>
+<th>Text wrapping</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>normal</td>
+<td>Collapse</td>
+<td>Collapse</td>
+<td>Wrap</td>
+</tr>
+<tr>
+<td>nowrap</td>
+<td>Collapse</td>
+<td>Collapse</td>
+<td>No wrap</td>
+</tr>
+<tr>
+<td>pre</td>
+<td>Preserve</td>
+<td>Preserve</td>
+<td>No wrap</td>
+</tr>
+<tr>
+<td>pre-wrap</td>
+<td>Preserve</td>
+<td>Preserve</td>
+<td>Wrap</td>
+</tr>
+<tr>
+<td>pre-line</td>
+<td>Preserve</td>
+<td>Collapse</td>
+<td>Wrap</td>
+</tr>
+</tbody>
+</table>
+<p><strong>1.3.2 - 文字换行</strong><br><code>word-wrap: normal | break-word</code><br>注意：允许长单词自动换行。<br><code>word-break: normal | break-all | keep-all</code><br>注意：<code>break-all</code> 单词中的任意字母间都可以换行。</p>
+<h3 id="1-4-文本装饰"><a href="#1-4-文本装饰" class="headerlink" title="1.4 - 文本装饰"></a>1.4 - 文本装饰</h3><p><strong> 1.4.1 - 文字阴影</strong><br><code>text-shadow:none | &lt;shadow-t&gt;#</code>或 <code>text-shadow:none | [&lt;length&gt;{2,3}&amp;&amp;&lt;color&gt;?]#</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">p &#123;</span><br><span class="line">  text-shadow: 1px 1px 1px #000,</span><br><span class="line">               3px 3px 5px blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>value = The X-coordinate X 轴偏移像素</li>
+<li>value = The Y-coordinate Y 轴偏移像素</li>
+<li>value = The blur radius 阴影模糊半径</li>
+<li>value = The color of the shadow 阴影颜色（默认为文字颜色）</li>
+</ul>
+<p><strong>1.4.2 - 文本装饰（下划线等）</strong><br><code>text-decoration: &lt;&#39;text-decoration-line&#39;&gt; || &lt;&#39;text-decoration-style&#39;&gt; || &lt;&#39;text-decoration-color&#39;&gt;</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">h1.under &#123;</span><br><span class="line">    text-decoration: underline;</span><br><span class="line">&#125;</span><br><span class="line">h1.over &#123;</span><br><span class="line">    text-decoration: overline;</span><br><span class="line">&#125;</span><br><span class="line">p.line &#123;</span><br><span class="line">    text-decoration: line-through;</span><br><span class="line">&#125;</span><br><span class="line">p.blink &#123;</span><br><span class="line">    text-decoration: blink;</span><br><span class="line">&#125;</span><br><span class="line">a.none &#123;</span><br><span class="line">    text-decoration: none;</span><br><span class="line">&#125;</span><br><span class="line">p.underover &#123;</span><br><span class="line">    text-decoration: underline overline;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+  </article>
+  <div class="random-toc-area">
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
+  <div class="random-toc">
+    <h2>目录</h2>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-CSS文本"><span class="toc-text">1 - CSS文本</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-字体"><span class="toc-text">1.1 - 字体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-对齐方式"><span class="toc-text">1.2 - 对齐方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-格式处理"><span class="toc-text">1.3 - 格式处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-文本装饰"><span class="toc-text">1.4 - 文本装饰</span></a></li></ol></li></ol>
+  </div>
+</div>
+
+  
+<nav id="pagination">
+  
+    <a href="/2017/09/21/css选择器/" class="prev">&larr; 上一篇 css选择器</a>
+  
+
+  
+
+  
+    <a href="/2017/09/06/css语法/" class="next">下一篇 css语法 &rarr;</a>
+  
+</nav>
+
+  <!-- JiaThis Button BEGIN -->
+
+<!-- JiaThis Button END -->
+
+
+      
+      
+    </div>
+  </div>
+
+  <div id="bottom-outer">
+    <div id="bottom-inner">
+      Site by John Doe using
+      <a href="http://hexo.io">Hexo</a> & <a href="https://github.com/stiekel/hexo-theme-random">Random</a>
+      <br>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<div id="user-card">
+  <div class="center-field">
+    <img class="avatar" src="http://pic64.nipic.com/file/20150419/17961491_162225443000_2.jpg">
+    <p id="description"></p>
+    <ul class="social-icon">
+  
+  
+    <li>
+      <a href="https://github.com/stiekel/hexo-theme-random">
+        
+          <i class="icon iconfont github">&#xe606;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="https://coding.net/u/Stiekel">
+        
+          <i class="icon iconfont coding">&#xe607;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="https://twitter.com/SidCN">
+        
+          <i class="icon iconfont twitter">&#xe600;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="http://weibo.com/sidcn">
+        
+          <i class="icon iconfont weibo">&#xe602;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="http://www.douban.com/people/Stiekel/">
+        
+          <i class="icon iconfont douban">&#xe60f;</i>
+        
+      </a>
+    </li>
+  
+</ul>
+  </div>
+</div>
+
+
+<div id="btn-view">Hide</div>
+
+<script>
+// is trigger analytics / tongji script
+var isIgnoreHost = false;
+
+if(window && window.location && window.location.host) {
+  isIgnoreHost = ["localhost","127.0.0.1"].some(function(address){
+    return 0 === window.location.host.indexOf(address);
+  });
+}
+
+var isTriggerAnalytics = !( true && isIgnoreHost );
+
+</script>
+
+
+
+
+  
+  
+    <script src="/js/jquery-2.2.3.min.js"></script>
+  
+    <script src="/js/vegas.min.js"></script>
+  
+    <script src="/js/random.js"></script>
+  
+    <script src="/js/highlight.pack.js"></script>
+  
+    <script src="/js/jquery.mousewheel.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox-thumbs.js"></script>
+  
+    <script src="/js/plyr.js"></script>
+  
+
+<script>
+
+  // fancybox
+  var backgroundImages = [];
+  
+  $('#post').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox') || $(this).parent().hasClass('fancybox-thumb')) return;
+      var alt = this.alt || this.title;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'post' + i);
+    });
+  });
+  $(".fancybox").fancybox();
+
+var vegasConfig = {"preload­Image":true,"transition":["slideLeft2","slideRight2","flash2"],"timer":true,"delay":5000,"shuffle":true,"count":28};
+var unsplashConfig = {"gravity":"north"};
+// is show background images
+var turnoffBackgroundImage = false;
+
+
+
+  turnoffBackgroundImage = true;
+
+
+var backgroundColor = "34495E";
+
+$(".fancybox-thumb").fancybox({
+  prevEffect: 'none',
+  nextEffect: 'none',
+  helpers: {
+    title: {
+      type: 'outside'
+    },
+    thumbs: {
+      width: 50,
+      height: 50
+    }
+  }
+});
+
+// show video with plyr
+$(".video-container iframe").each(function(i){
+  var url = $(this).attr('src');
+  var id = url.split('/').pop();
+  var plyrContainer = document.createElement('div');
+  plyrContainer.className = 'plyr';
+  var plyrElement = document.createElement('div');
+  plyrElement.dataset.videoId = id;
+  switch(true) {
+    case url.search('youtube.com') >= 0:
+      plyrElement.dataset.type = 'youtube';
+      break;
+    case url.search('vimeo.com') >= 0:
+      plyrElement.dataset.type = 'vimeo';
+      break;
+    default:
+      return;
+  };
+  plyrContainer.appendChild(plyrElement);
+  $(this).parent().html(plyrContainer);
+});
+plyr.setup('.plyr', {iconUrl: '/css/sprite.svg'});
+</script>
+</body>
+</html>
+

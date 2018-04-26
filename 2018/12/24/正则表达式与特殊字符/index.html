@@ -1,7 +1,5 @@
 
 
-  
-
 
 
 
@@ -18,9 +16,23 @@
   
   
   
-    <meta name="description" content="">
+    <meta name="description" content="正则表达式的特殊字符
+1.原子的筛选方式
+
+|   匹配两个或者多个分支选择
+[]  匹配方括号中的任意一个原子
+[^] 匹配除括号中的原子之外的任意字符
+
+
+2.元字符(原子的集合)
+
+.  匹配除换行符之外的任意字符
+\d 匹配任意一个十进制数字,即[0-9]
+\D 匹配任意一个非十进制数字,即[^0-9]
+\s 匹配一个不可见原子,即[\f\n\r\t\v]
+\S 匹配一个可见原子,即...">
   
-  <title>归档 [ Knight ]</title>
+  <title>正则表达式与特殊字符 [ Knight ]</title>
   
   
     <link rel="shortcut icon" href="/favicon.ico">
@@ -39,6 +51,15 @@
 <body>
 <div class="side-navigate hide-area">
   
+  
+    <div class="item next">
+      <a href="/2018/12/13/继承与闭包/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        继承与闭包
+      </div>
+    </div>
   
 </div>
 <div id="outer-container" class="hide-area">
@@ -64,7 +85,7 @@
           </li>
         
           
-            <li class="active">
+            <li>
           
             <a href="/archives">Archives</a>
             
@@ -110,174 +131,99 @@
     <div id="content-inner">
       
       
-  <article>
+  <article id="post">
+    <h1>正则表达式与特殊字符</h1>
+    <p class="page-title-sub">
+      <span id = "post-title-date">撰写于 2018-12-24</span>
+      
+        <span id = "post-title-updated">修改于 2018-04-26</span>
+      
+      
+      
+    </p>
     
-
-  <div id="recent-posts">
-    <h1>归档
-    
-      <span class="posts-count">
-      共
-      5
-      
-        文章
-      
-      </span>
-    
-    </h1>
-    
-    
-      
-      
-        
-      
-      
-    
-      
-      
-      
-    
-      
-      
-      
-    
-      
-      
-      
-    
-      
-      
-      
-    
-    
-    
-      
-      
-        
-        <h3 class="archive-year-title">2017
-        
-          <span class="posts-count">
-          共
-          5
-          
-            文章
-          
-          </span>
-        
-        </h3>
-      
-      <div class="post-title-item">
-  
-  <a href="/2017/09/11/css文本/">
-  
-    css文本
-  
-  </a>
-  <p class="page-title-sub">
-    <span id = "post-title-date">9-11</span>
-    
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-    
-      
-      
-      <div class="post-title-item">
-  
-  <a href="/2017/09/06/css语法/">
-  
-    css语法
-  
-  </a>
-  <p class="page-title-sub">
-    <span id = "post-title-date">9-6</span>
-    
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-    
-      
-      
-      <div class="post-title-item">
-  
-  <a href="/2017/08/20/HTML5元素和属性/">
-  
-    HTML5元素和属性
-  
-  </a>
-  <p class="page-title-sub">
-    <span id = "post-title-date">8-20</span>
-    
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-    
-      
-      
-      <div class="post-title-item">
-  
-  <a href="/2017/08/16/HTML5/">
-  
-    HTML5
-  
-  </a>
-  <p class="page-title-sub">
-    <span id = "post-title-date">8-16</span>
-    
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-    
-      
-      
-      <div class="post-title-item">
-  
-  <a href="/2017/08/09/html/">
-  
-    html
-  
-  </a>
-  <p class="page-title-sub">
-    <span id = "post-title-date">8-9</span>
-    
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-    
-  </div>
-
+    <h1 id="正则表达式的特殊字符"><a href="#正则表达式的特殊字符" class="headerlink" title="正则表达式的特殊字符"></a>正则表达式的特殊字符</h1><ul>
+<li><p>1.原子的筛选方式</p>
+<ul>
+<li>|   匹配两个或者多个分支选择</li>
+<li>[]  匹配方括号中的任意一个原子</li>
+<li>[^] 匹配除括号中的原子之外的任意字符</li>
+</ul>
+</li>
+<li><p>2.元字符(原子的集合)</p>
+<ul>
+<li>.  匹配除换行符之外的任意字符</li>
+<li>\d 匹配任意一个十进制数字,即[0-9]</li>
+<li>\D 匹配任意一个非十进制数字,即[^0-9]</li>
+<li>\s 匹配一个不可见原子,即[\f\n\r\t\v]</li>
+<li>\S 匹配一个可见原子,即[^\f\n\r\t\v]</li>
+<li>\w 匹配任意一个数字,字母或下划线[0-9a-zA-Z_]</li>
+<li>\W 匹配任意一个非数字,字母或下划线[^0-9a-zA-Z_]</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>3.量词</p>
+<ul>
+<li>{n} 表示其前面的原子恰好出现 n次</li>
+<li>{n,} 表示其前面的原子最少出现 n 次</li>
+<li>{n,m} 表示其前面的原子最少出现 n 次,最多出现 m 次</li>
+<li><ul>
+<li>匹配0次,1次或者多次其之前的原子,即{0}</li>
+</ul>
+</li>
+<li>+ 匹配1次或者多次之前的原子,即{1,}</li>
+<li>? 匹配0次或者1次其之前的原子,即{0,1}</li>
+</ul>
+</li>
+<li><p>4.边界控制</p>
+<ul>
+<li>^ 匹配字符串开始的位置</li>
+<li>$ 匹配字符串结尾的位置</li>
+<li>()匹配其中的整体为一个原子</li>
+</ul>
+</li>
+</ul>
+<h1 id="简单正则表达式"><a href="#简单正则表达式" class="headerlink" title="简单正则表达式"></a>简单正则表达式</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//1.构造函数  RegExp()</span><br><span class="line"> var str = &apos;HeLlo World&apos;;</span><br><span class="line"></span><br><span class="line"> //&apos;Hello World&apos;  找出有没有 l 字母</span><br><span class="line"> var reg1 = new RegExp(&apos;f&apos;);</span><br><span class="line"> //RegExp(检索的条件,检索方式);</span><br><span class="line"> /*</span><br><span class="line">  i  忽略大小写</span><br><span class="line">  g  全局检索</span><br><span class="line">  */</span><br><span class="line"> var reg2 = new RegExp(&apos;l&apos;,&apos;g&apos;);</span><br><span class="line"></span><br><span class="line"> //2.使用字面量进行创建   /条件/方式</span><br><span class="line"> var reg3 = /l/ig;</span><br></pre></td></tr></table></figure>
+<h1 id="正则表达式的常用方法"><a href="#正则表达式的常用方法" class="headerlink" title="正则表达式的常用方法"></a>正则表达式的常用方法</h1><ul>
+<li>1.compile() 编辑   改变正则表达式的筛选条件</li>
+<li>2.match()  通过字符串调用,传入参数正则表达式</li>
+<li>3.replace() 替换</li>
+<li>4.search  查找对应的结果 第一个位置</li>
+<li>5.split  字符串分割</li>
+</ul>
+<h1 id="常用正则表达式"><a href="#常用正则表达式" class="headerlink" title="常用正则表达式"></a>常用正则表达式</h1><ul>
+<li>1.必须是6位数字,第一位不能为0</li>
+<li>2.检测文件的压缩包(zip,rar,gz等)</li>
+<li>3.空格处理</li>
+<li>4.邮箱判断</li>
+</ul>
 
   </article>
+  <div class="random-toc-area">
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
+  <div class="random-toc">
+    <h2>目录</h2>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#正则表达式的特殊字符"><span class="toc-text">正则表达式的特殊字符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#简单正则表达式"><span class="toc-text">简单正则表达式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#正则表达式的常用方法"><span class="toc-text">正则表达式的常用方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#常用正则表达式"><span class="toc-text">常用正则表达式</span></a></li></ol>
+  </div>
+</div>
+
+  
+<nav id="pagination">
+  
+
+  
+
+  
+    <a href="/2018/12/13/继承与闭包/" class="next">下一篇 继承与闭包 &rarr;</a>
+  
+</nav>
+
+  <!-- JiaThis Button BEGIN -->
+
+<!-- JiaThis Button END -->
+
 
       
       
@@ -411,6 +357,8 @@ var unsplashConfig = {"gravity":"north"};
 var turnoffBackgroundImage = false;
 
 
+
+  turnoffBackgroundImage = true;
 
 
 var backgroundColor = "34495E";

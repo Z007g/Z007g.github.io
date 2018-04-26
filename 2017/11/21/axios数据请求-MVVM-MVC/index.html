@@ -1,0 +1,431 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta name="author" content="John Doe">
+  
+  
+  
+  
+    <meta name="description" content="知识点
+axios数据请求
+MVVM/MVC
+Vue和MVVM的暧昧关系
+补充内容
+
+axios数据请求
+概念
+基于 Promise 的 HTTP 请求客户端，可同时在浏览器和 node.js 中使用
+github地址
+
+
+基本例子1234567axios.get(&apos;http://api.openweathermap.org/data/2.5/forecast/daily?q=Be...">
+  
+  <title>axios数据请求/MVVM/MVC [ Knight ]</title>
+  
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  
+  <link rel="stylesheet" href="/css/random.css">
+<link rel="stylesheet" href="/css/vegas.min.css">
+<link rel="stylesheet" href="/css/highlight-railscasts.css">
+<link rel="stylesheet" href="/css/jquery.fancybox.css">
+<link rel="stylesheet" href="/css/iconfont/iconfont.css">
+<link rel="stylesheet" href="/css/jquery.fancybox-thumbs.css">
+<link rel="stylesheet" href="/css/plyr.css">
+  
+</head>
+
+<body>
+<div class="side-navigate hide-area">
+  
+    <div class="item prev">
+      <a href="/2017/11/25/jQuery-自定义动画/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        jQuery 自定义动画
+      </div>
+    </div>
+  
+  
+    <div class="item next">
+      <a href="/2017/11/03/vue双向数据绑定的原理/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        vue双向数据绑定的原理
+      </div>
+    </div>
+  
+</div>
+<div id="outer-container" class="hide-area">
+<div id="container">
+  <div id="menu-outer" class="slide-down">
+    <div id="menu-inner">
+      <div id="brand">
+        
+        <a onClick="openUserCard()">
+          <img id="avatar" src="http://pic64.nipic.com/file/20150419/17961491_162225443000_2.jpg"/>
+          <div id="homelink">Knight</div>
+        </a>
+      </div>
+      <div id="menu-list">
+        <ul>
+        
+        
+          
+            <li>
+          
+            <a href="/index.html">Home</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/archives">Archives</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/tags">Tags</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/categories">Categories</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/about">About</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="https://github.com/stiekel/hexo-theme-random">Github</a>
+            
+          </li>
+        
+        </ul>
+      </div>
+      <div id="show-menu">
+        <button>Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="content-outer">
+    <div id="content-inner">
+      
+      
+  <article id="post">
+    <h1>axios数据请求/MVVM/MVC</h1>
+    <p class="page-title-sub">
+      <span id = "post-title-date">撰写于 2017-11-21</span>
+      
+        <span id = "post-title-updated">修改于 2018-04-26</span>
+      
+      
+      
+    </p>
+    
+    <h1 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h1><ul>
+<li>axios数据请求</li>
+<li>MVVM/MVC</li>
+<li>Vue和MVVM的暧昧关系</li>
+<li>补充内容</li>
+</ul>
+<h1 id="axios数据请求"><a href="#axios数据请求" class="headerlink" title="axios数据请求"></a>axios数据请求</h1><ul>
+<li>概念<ul>
+<li>基于 Promise 的 HTTP 请求客户端，可同时在浏览器和 node.js 中使用</li>
+<li><a href="https://github.com/mzabriskie/axios" target="_blank" rel="noopener">github地址</a></li>
+</ul>
+</li>
+<li>基本例子<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">axios.get(&apos;http://api.openweathermap.org/data/2.5/forecast/daily?q=Beijing&amp;appid=7c5219469d1d3aa869d2599559d26fc1&amp;lang=zh_cn&apos;)</span><br><span class="line">    .then(function (response) &#123;</span><br><span class="line">      console.log(response);</span><br><span class="line">    &#125;)</span><br><span class="line">    .catch(function (error) &#123;</span><br><span class="line">      console.log(error);</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="MVVM-MVC"><a href="#MVVM-MVC" class="headerlink" title="MVVM/MVC"></a>MVVM/MVC</h1><p>####MVC</p>
+<ul>
+<li>概述<ul>
+<li>MVC 即 Model-View-Controller 的缩写，就是 模型-视图-控制器 , 也就是说一个标准的Web 应用程序是由这三部分组成.</li>
+</ul>
+</li>
+<li>View 用来把数据以某种方式呈现给用户。Model 其实就是数据。Controller 接收并处理来自用户的请求，并将 Model 返回给用户。</li>
+</ul>
+<ul>
+<li>中间的过渡过程<ul>
+<li>MVC 架构模式对于简单的应用来看起是OK 的，也符合软件架构的分层思想。 但实际上，随着H5 的不断发展，人们更希望使用H5 开发的应用能和Native 媲美，或者接近于原生App 的体验效果，于是前端应用的复杂程度已不同往日，今非昔比。这时前端开发就暴露出了三个痛点问题<ul>
+<li>开发者在代码中大量调用相同的 DOM API, 处理繁琐 ，操作冗余，使得代码难以维护。</li>
+<li>大量的DOM 操作使页面渲染性能降低，加载速度变慢，影响用户体验。</li>
+<li>当 Model 频繁发生变化，开发者需要主动更新到View ；当用户的操作导致 Model 发生变化，开发者同样需要将变化的数据同步到</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="MVVM"><a href="#MVVM" class="headerlink" title="MVVM"></a>MVVM</h4><ul>
+<li>MVVM 由 Model,View,ViewModel 三部分构成，Model 层代表数据模型，也可以在Model中定义数据修改和操作的业务逻辑；View 代表UI 组件，它负责将数据模型转化成UI 展现出来，ViewModel 是一个同步View 和 Model的对象</li>
+<li>ViewModel 通过双向数据绑定把 View 层和 Model 层连接了起来，而View 和 Model 之间的同步工作完全是自动的，无需人为干涉，因此开发者只需关注业务逻辑，不需要手动操作DOM,</li>
+</ul>
+<h1 id="Vue和MVVM的暧昧关系"><a href="#Vue和MVVM的暧昧关系" class="headerlink" title="Vue和MVVM的暧昧关系"></a>Vue和MVVM的暧昧关系</h1><ul>
+<li>Vue.js 可以说是MVVM 架构的很好实践，专注于 MVVM 中的 ViewMode(只需关注业务逻辑，不需要手动操作DOM)<br>[图片上传失败…(image-4149a-1516350102775)]<h1 id="补充内容"><a href="#补充内容" class="headerlink" title="补充内容"></a>补充内容</h1></li>
+<li>实例属性 ref<ul>
+<li>ref 被用来给元素或子组件注册引用信息。引用信息将会注册在父组件的 $refs 对象上。如果在普通的 DOM 元素上使用，引用指向的就是 DOM 元素; 如果用在子组件上，引用就指向组件实例</li>
+</ul>
+</li>
+<li>$mount()<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 可以使用 vm.$mount() 手动地挂载一个未挂载的实例。</span><br><span class="line">let vm=new Vue(&#123;</span><br><span class="line">    data:&#123;</span><br><span class="line">        a:101</span><br><span class="line">    &#125;</span><br><span class="line">&#125;).$mount(&apos;#box&apos;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>v-pre</p>
+<ul>
+<li>v-pre 跳过这个元素和它的子元素的编译过程。可以用来显示原始 Mustache 标签。跳过大量没有指令的节点会加快编译。</li>
+</ul>
+</li>
+<li><p>v-cloak</p>
+<ul>
+<li><p>解决闪烁问题</p>
+<ul>
+<li><p>第一css设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line"> [v-cloak] &#123;</span><br><span class="line">   display: none;</span><br><span class="line"> &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第二指令</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>自定义指令</p>
+<ul>
+<li>全局定义</li>
+<li>局部定义</li>
+</ul>
+</li>
+</ul>
+
+  </article>
+  <div class="random-toc-area">
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
+  <div class="random-toc">
+    <h2>目录</h2>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#知识点"><span class="toc-text">知识点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#axios数据请求"><span class="toc-text">axios数据请求</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MVVM-MVC"><span class="toc-text">MVVM/MVC</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#MVVM"><span class="toc-text">MVVM</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue和MVVM的暧昧关系"><span class="toc-text">Vue和MVVM的暧昧关系</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#补充内容"><span class="toc-text">补充内容</span></a></li></ol>
+  </div>
+</div>
+
+  
+<nav id="pagination">
+  
+    <a href="/2017/11/25/jQuery-自定义动画/" class="prev">&larr; 上一篇 jQuery 自定义动画</a>
+  
+
+  
+
+  
+    <a href="/2017/11/03/vue双向数据绑定的原理/" class="next">下一篇 vue双向数据绑定的原理 &rarr;</a>
+  
+</nav>
+
+  <!-- JiaThis Button BEGIN -->
+
+<!-- JiaThis Button END -->
+
+
+      
+      
+    </div>
+  </div>
+
+  <div id="bottom-outer">
+    <div id="bottom-inner">
+      Site by John Doe using
+      <a href="http://hexo.io">Hexo</a> & <a href="https://github.com/stiekel/hexo-theme-random">Random</a>
+      <br>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<div id="user-card">
+  <div class="center-field">
+    <img class="avatar" src="http://pic64.nipic.com/file/20150419/17961491_162225443000_2.jpg">
+    <p id="description"></p>
+    <ul class="social-icon">
+  
+  
+    <li>
+      <a href="https://github.com/stiekel/hexo-theme-random">
+        
+          <i class="icon iconfont github">&#xe606;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="https://coding.net/u/Stiekel">
+        
+          <i class="icon iconfont coding">&#xe607;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="https://twitter.com/SidCN">
+        
+          <i class="icon iconfont twitter">&#xe600;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="http://weibo.com/sidcn">
+        
+          <i class="icon iconfont weibo">&#xe602;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="http://www.douban.com/people/Stiekel/">
+        
+          <i class="icon iconfont douban">&#xe60f;</i>
+        
+      </a>
+    </li>
+  
+</ul>
+  </div>
+</div>
+
+
+<div id="btn-view">Hide</div>
+
+<script>
+// is trigger analytics / tongji script
+var isIgnoreHost = false;
+
+if(window && window.location && window.location.host) {
+  isIgnoreHost = ["localhost","127.0.0.1"].some(function(address){
+    return 0 === window.location.host.indexOf(address);
+  });
+}
+
+var isTriggerAnalytics = !( true && isIgnoreHost );
+
+</script>
+
+
+
+
+  
+  
+    <script src="/js/jquery-2.2.3.min.js"></script>
+  
+    <script src="/js/vegas.min.js"></script>
+  
+    <script src="/js/random.js"></script>
+  
+    <script src="/js/highlight.pack.js"></script>
+  
+    <script src="/js/jquery.mousewheel.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox-thumbs.js"></script>
+  
+    <script src="/js/plyr.js"></script>
+  
+
+<script>
+
+  // fancybox
+  var backgroundImages = [];
+  
+  $('#post').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox') || $(this).parent().hasClass('fancybox-thumb')) return;
+      var alt = this.alt || this.title;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'post' + i);
+    });
+  });
+  $(".fancybox").fancybox();
+
+var vegasConfig = {"preload­Image":true,"transition":["slideLeft2","slideRight2","flash2"],"timer":true,"delay":5000,"shuffle":true,"count":28};
+var unsplashConfig = {"gravity":"north"};
+// is show background images
+var turnoffBackgroundImage = false;
+
+
+
+  turnoffBackgroundImage = true;
+
+
+var backgroundColor = "34495E";
+
+$(".fancybox-thumb").fancybox({
+  prevEffect: 'none',
+  nextEffect: 'none',
+  helpers: {
+    title: {
+      type: 'outside'
+    },
+    thumbs: {
+      width: 50,
+      height: 50
+    }
+  }
+});
+
+// show video with plyr
+$(".video-container iframe").each(function(i){
+  var url = $(this).attr('src');
+  var id = url.split('/').pop();
+  var plyrContainer = document.createElement('div');
+  plyrContainer.className = 'plyr';
+  var plyrElement = document.createElement('div');
+  plyrElement.dataset.videoId = id;
+  switch(true) {
+    case url.search('youtube.com') >= 0:
+      plyrElement.dataset.type = 'youtube';
+      break;
+    case url.search('vimeo.com') >= 0:
+      plyrElement.dataset.type = 'vimeo';
+      break;
+    default:
+      return;
+  };
+  plyrContainer.appendChild(plyrElement);
+  $(this).parent().html(plyrContainer);
+});
+plyr.setup('.plyr', {iconUrl: '/css/sprite.svg'});
+</script>
+</body>
+</html>
+

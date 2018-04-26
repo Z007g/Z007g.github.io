@@ -1,0 +1,495 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta name="author" content="John Doe">
+  
+  
+  
+  
+    <meta name="description" content="HTML基础引言在正式的开始 HTML 学习之前，有必要跟大家讲一些网站开发的相关知识。了解这些知识，对你以后网站开发之路如何走、该学习些什么，是非常有用的。
+1．Web 1.0 时代的网页制作网页制作是 Web 1.0 时代的产物，那个时候的网页主要是静态网页，所谓的静态网页就是没有与用户进行交互，且仅仅供读者浏览的网页，例如一篇 QQ 日志、一篇博文等展示性网页。在 Web 1.0 时代...">
+  
+  <title>html [ Knight ]</title>
+  
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  
+  <link rel="stylesheet" href="/css/random.css">
+<link rel="stylesheet" href="/css/vegas.min.css">
+<link rel="stylesheet" href="/css/highlight-railscasts.css">
+<link rel="stylesheet" href="/css/jquery.fancybox.css">
+<link rel="stylesheet" href="/css/iconfont/iconfont.css">
+<link rel="stylesheet" href="/css/jquery.fancybox-thumbs.css">
+<link rel="stylesheet" href="/css/plyr.css">
+  
+</head>
+
+<body>
+<div class="side-navigate hide-area">
+  
+    <div class="item prev">
+      <a href="/2017/08/16/HTML5/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        HTML5
+      </div>
+    </div>
+  
+  
+</div>
+<div id="outer-container" class="hide-area">
+<div id="container">
+  <div id="menu-outer" class="slide-down">
+    <div id="menu-inner">
+      <div id="brand">
+        
+        <a onClick="openUserCard()">
+          <img id="avatar" src="http://pic64.nipic.com/file/20150419/17961491_162225443000_2.jpg"/>
+          <div id="homelink">Knight</div>
+        </a>
+      </div>
+      <div id="menu-list">
+        <ul>
+        
+        
+          
+            <li>
+          
+            <a href="/index.html">Home</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/archives">Archives</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/tags">Tags</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/categories">Categories</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/about">About</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="https://github.com/stiekel/hexo-theme-random">Github</a>
+            
+          </li>
+        
+        </ul>
+      </div>
+      <div id="show-menu">
+        <button>Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="content-outer">
+    <div id="content-inner">
+      
+      
+  <article id="post">
+    <h1>html</h1>
+    <p class="page-title-sub">
+      <span id = "post-title-date">撰写于 2017-08-09</span>
+      
+        <span id = "post-title-updated">修改于 2018-04-26</span>
+      
+      
+      
+    </p>
+    
+    <h1 id="HTML基础"><a href="#HTML基础" class="headerlink" title="HTML基础"></a>HTML基础</h1><h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><p>在正式的开始 HTML 学习之前，有必要跟大家讲一些网站开发的相关知识。了解这些知识，对你以后网站开发之路如何走、该学习些什么，是非常有用的。</p>
+<p>1．Web 1.0 时代的网页制作<br>网页制作是 Web 1.0 时代的产物，那个时候的网页主要是静态网页，所谓的静态网页就是没有与用户进行交互，且仅仅供读者浏览的网页，例如一篇 QQ 日志、一篇博文等展示性网页。在 Web 1.0 时代，用户能做的唯一一件事就是浏览这个网站的文字图片内容，不能像现在一样评论交流（缺乏交互性）。或许你们有听过“网页三剑客Dreamweaver+Fireworks+Flash”，这个组合就是 Web 1.0 时代的产物。</p>
+<p>2．Web 2.0 时代的前端开发<br>“前端开发”是从“网页制作”演变而来的。从 2005 年开始，互联网进入 Web 2.0 时代，由单一的文字和图片组成的静态网页已经不能满足用户的需求，用户需要更好的体验。</p>
+<p>Web2.0 时代的网页不仅包含炫丽的动画、音频和视频，还可以让用户在网页中评论交流、上传和下载文件等（交互性）。这个时代的网页，如果是用“网页三剑客 Dreamweaver+Fireworks+Flash”制作的，那远远不能满足需求。现在网站开发无论是开发难度，还是开发方式，都更接近传统的网站后台开发，所以现在不再叫“网页制作”，而是叫“Web 前端开发”。</p>
+<p>所以，处于 Web 2.0 时代的你，如果要学习网站开发技术，就不要再相信所谓的“网页三剑客 Dreamweaver+Fireworks+Flash”，因为这个组合已经是上个互联网时代的产物。而且这个组合开发出来的网站的问题也非常多，例如代码冗余、维护困难。</p>
+<p>网页最主要由三部分组成：结构、表现和行为。HTML 是网页的结构，CSS 是网页的外观，而 JavaScript 是页面的行为。</p>
+<p>怎么理解呢？</p>
+<p>给大家打个比喻。我们把前端开发的过程比喻成“建房子”，做一个网页就像盖一栋房子，先把房子结构建好（HTML）。建好房子之后给房子装修（CSS），例如往窗户安上窗帘、给地板铺上漂亮的瓷砖。最后呢，装修完了之后，当夜幕降临的时候，我们要开灯（JavaScript），这样才能看得见里面。</p>
+<blockquote>
+<p>那么，首先我们要学习的就是盖房子，也就是 HTML。之所以从 HTML 讲起，是因为 CSS 的用途就是为 HTML 标记添加样式。所以，你首<br>先得知道怎么编写和构造 HTML 标记，才能让 CSS 更方便地为它添加样式。每个网页<br>在呱呱坠地时都只包含 HTML 标记，因为用 HTML 来标记内容是做任何网页的头一件<br>事。所谓内容，就是你想要传达给读者的那些东西，比如文字、图片、音频和视频。</p>
+</blockquote>
+<h2 id="什么是-HTML？"><a href="#什么是-HTML？" class="headerlink" title="什么是 HTML？"></a>什么是 HTML？</h2><p>HTML，全称“Hyper Text Markup Language”（超文本标记语言），使用<strong>标签</strong>来描述网页的<strong>内容</strong>和<strong>结构</strong>。</p>
+<p>请大家注意<strong>内容</strong>和<strong>结构</strong>这两个词，在以后的学习中，会反复被强调。</p>
+<p>基础的 HTML 编码结构如下：</p>
+<pre><code>&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;这是标题&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    这是示例文本...
+    &lt;!-- 我们使用这种写法来标记注释 --&gt;
+    &lt;!-- 页面标签和其他的内容都在这里.... --&gt;
+    &lt;!-- 这是在浏览器中显示的实际区域 --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p><a href="http://jsbin.com/qopocesuro/2/edit?html,output" target="_blank" rel="noopener">基础的 HTML demo</a></p>
+<pre><code>&lt; 标签符 &gt; 内容 &lt;/ 标签符 &gt;
+</code></pre><p>标签符<strong>一般</strong>都是成对出现，有一个开始符号和一个结束符号，结束符号只是在开始符号的前面加一个斜杠“/”。当浏览器收到 HTML 文本后，就会解释里面的标签符，然后把标签符相对应的功能表达出来。</p>
+<p>举例来说，段落元素包含起始标记<code>&lt;p&gt;</code>和结束标记 <code>&lt;/p&gt;</code>。下面的例子展示一个包含HTML段落元素的段落</p>
+<pre><code>&lt;p&gt;你开始学习HTML了.&lt;/p&gt;
+</code></pre><p>当此内容显示在网页浏览器中，它看起来会像这样：</p>
+<p><a href="http://jsbin.com/jimomibuva/1/edit?html,output" target="_blank" rel="noopener">p标签 demo</a></p>
+<p>包含内容的元素同时可以包含其他的元素，比如强调元素(<code>&lt;em&gt;</code>) 可以包裹在段落元素里面：</p>
+<pre><code>&lt;p&gt;你&lt;em&gt;开始&lt;/em&gt;学习HTML了.&lt;/p&gt;
+</code></pre><p><a href="http://jsbin.com/lohecaxiba/2/edit?html,output" target="_blank" rel="noopener">斜体 demo</a></p>
+<p>有一些元素是不能包含其他元素的，比如图片标签(<code>&lt;img&gt;</code>)，它只需要简单的指定文件名，作为他的一个属性即可。</p>
+<pre><code>&lt;img src-&quot;http://tc-html5dw-com.b0.upaiyun.com/ec450/ec4503d9ccaf0695dbb86b860b3648ce.jpg&quot; /&gt;
+</code></pre><p><a href="http://jsbin.com/qikuwinilu/edit?html,output" target="_blank" rel="noopener">图片 demo</a></p>
+<p>通常而言，尖括号括起的内容前面有斜线意味着一个标签的结束。这在HTML中是可选项，而在XHTML是必须的，包括XML模式下的HTML元素。<strong>所以我们约定，在之后的 HTML 中，为全部结束标签都加上斜线。</strong></p>
+<h2 id="元素——基本的构造区块"><a href="#元素——基本的构造区块" class="headerlink" title="元素——基本的构造区块"></a>元素——基本的构造区块</h2><p>HTML 由不同元素的集合组成。元素定义了它们所包含内容的语义。元素包含了两个相匹配的元素标签（tag）之中所有的内容，当然也包含了标签本身。例如上面提到的两个例子，<code>&lt;p&gt;</code>标签表示一个段落的开始；<code>&lt;img&gt;</code>标签表示一张图片。访问 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element" target="_blank" rel="noopener">HTML 元素参考页面</a> 以查阅完整的列表。</p>
+<p>我们发现，这份资料里面包含了一百多个 HTML 标签，在 HTML 入门学习中，对于标签我们很难学一个就掌握一个。在学习初期我们不用全部都掌握，只需要记住一些常用的标签就足够了。等到你学到更高级的知识时再回过头看，就会容易许多。</p>
+<p>那么哪些标签是常用的呢？我们来做下面的一个测试。</p>
+<p>打开淘宝等网站，然后打开控制台，贴入以下代码，回车执行代码，就会在控制台看到结果。</p>
+<pre><code>var nodelist = document.getElementsByTagName(&quot;*&quot;);
+var arr = [];
+for (var i = 0; i &lt; nodelist.length; i++) {
+    arr.push(nodelist[i].tagName);
+}
+console.log(arr.filter((ele, pos, self) =&gt; self.indexOf(ele) == pos));
+console.log(arr.filter((ele, pos, self) =&gt; self.indexOf(ele) == pos).length);
+</code></pre><p>以下为 2017年9月12日 测试结果</p>
+<p>BAT 首页</p>
+<p><img src="http://tc-html5dw-com.b0.upaiyun.com/d0b83/d0b83683fa02a109afec212d6f1813c3.png" alt="百度"><br>百度 24 个标签</p>
+<p><img src="http://tc-html5dw-com.b0.upaiyun.com/7338d/7338d83ffa5ab2e0a2f550474baa98b4.png" alt="淘宝"><br>淘宝 36 个标签</p>
+<p><img src="http://tc-html5dw-com.b0.upaiyun.com/c4094/c40940d53ca29688ba6d59f1c377e88f.png" alt="腾讯"><br>腾讯 41 个标签</p>
+<p><img src="http://tc-html5dw-com.b0.upaiyun.com/10fab/10fabd0216b6095a0c21f7a1a54a90d5.png" alt="知乎"><br>而知乎只用了 32 个标签</p>
+<p>如此复杂的页面,平均只需要用到 30 个标签,然后我们来数,如此简单的页面就用到了 9 个标签</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
+  &lt;title&gt;JS Bin&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;http://typo.sofi.sh/typo.css&quot;&gt;
+  &lt;style&gt;/****/&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;h1&gt;中国发出的第一封电子邮件&lt;/h1&gt;
+  &lt;p&gt;越过长城，我们抵达世界的每一个角落&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+&lt;script&gt;//&lt;/script&gt;
+</code></pre><p><a href="http://jsbin.com/guwuqisigo/6/edit?html,output" target="_blank" rel="noopener">简单的 HTML 页面 demo</a></p>
+<p>除了上面的元素，还有以下常用标签</p>
+<p>根元素<br><code>&lt;html&gt;</code></p>
+<p>文档元数据<br><code>&lt;head&gt;、&lt;link&gt;、&lt;meta&gt;、&lt;style&gt;、&lt;title&gt;</code></p>
+<p>内容分区<br><code>&lt;h1-6&gt;</code></p>
+<p><a href="http://jsbin.com/beyawefayu/2/edit?html,output" target="_blank" rel="noopener">内容分区 demo</a></p>
+<p>文本内容<br><code>&lt;p&gt;、&lt;div&gt;、&lt;ul&gt;、&lt;li&gt;</code></p>
+<p><a href="http://jsbin.com/lulagutuzo/edit?html,output" target="_blank" rel="noopener">文本内容 demo</a></p>
+<p>内联文本语义<br><code>&lt;a&gt;、&lt;span&gt;、&lt;i&gt;</code></p>
+<p><a href="http://jsbin.com/lonidudavu/1/edit?html,output" target="_blank" rel="noopener">内联文本 demo</a></p>
+<p>图片和多媒体<br><code>&lt;img&gt;</code></p>
+<p><a href="http://jsbin.com/qikuwinilu/edit?html,output" target="_blank" rel="noopener">图片和多媒体 demo</a></p>
+<p>脚本<br><code>&lt;script&gt;</code></p>
+<p>表单<br><code>&lt;form&gt;、&lt;input&gt;、&lt;button&gt;、&lt;label&gt;、&lt;textarea&gt;</code></p>
+<p><a href="http://jsbin.com/lotifawive/edit?output" target="_blank" rel="noopener">表单 demo</a></p>
+<blockquote>
+<p>此外，很多时候我们也把“标签”说成“元素”，例如“p 标签”说成“p元素”，这说的是一个意思，只是叫法不同而已。</p>
+</blockquote>
+<p>一些元素都有着明确的含义， 例如 ”这是一张图片”，“这是一个标题” 或者 “这是一个有序列表”。 另外一些则没这么特殊，例如 “这是本页面的一个节” 或者 “这是文本的一部分”，但是就技术层面上而言它们都是必不可少的，  例如标记一些在网页中不会被显示的内容。不论如何,所有的html元素都有其特定的语义及存在价值。</p>
+<p>大部分的元素都支持元素嵌套，构成了一个层次结构。 一个简单的完整的网页结构例子如下所示：</p>
+<pre><code>&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;一个小型web页面&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+
+    &lt;p&gt;你在学习HTML的起始页面&lt;/p&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>显而易见, <code>&lt;html&gt;</code> 元素将其他元素括起, <code>&lt;body&gt;</code> 元素中包含网页内容。 该结构通常被视为由主干（<code>&lt;html&gt;</code>）发展而来的具有分支(本例中分支为， 元素 <code>&lt;body&gt;</code> 和<code>&lt;p&gt;</code> )的树形结构。 该层次化结构称为 DOM: Document Object Model–文档对象模型。</p>
+<h6 id="part-three"><a href="#part-three" class="headerlink" title="part-three"></a>part-three</h6><h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><p>HTML文档由纯文本表示。 你可以使用任意支持纯文本编写保存的文本编辑器来编写HTML文档，但大部分HTML程序员更倾向于使用专门的编辑器，这些编辑器支持语法高亮和DOM显示，例如Notepad++和sublime Text。 标签(Tag)的名字不区分大小写。 但是,W3C (维护了HTML标准的国际性性联盟)建议使用小写 ( XHTML 同样要求使用小写).</p>
+<p>HTML 为由一对尖括号（<code>&lt;&gt;</code>）所括起来的内容赋予了特定含义. 这样的标识称为一个 标签（tag）. 例如:</p>
+<pre><code>&lt;p&gt;这是段落中的文本。&lt;/p&gt;
+</code></pre><p>上述例子中有一个起始标签（start tag）和一个结束标签（end tag）。结束标签与起始标签在内容上是一样的，但结束标签会在小于符号（&lt;）后多一个整斜线/。 大多数 HTML 元素由一个起始标签和一个结束标签标识。起始标签和结束标签应成对出现，也就是说在一个起始标签之后应有其对应的结束标签。  由两个标签（起始标签和结束标签）构成的元素而言，缺少其中之一，这个元素都可能会被认为是无效的。</p>
+<p>注释：开始标签常被称为开放标签（opening tag），结束标签常称为闭合标签（closing tag)</p>
+<p>有效代码示例:</p>
+<pre><code>&lt;em&gt;我&lt;strong&gt;真的&lt;/strong&gt;是这个意思&lt;/em&gt;.
+</code></pre><p>无效代码示例:</p>
+<pre><code>&lt;!-- 无效: --&gt; &lt;em&gt;我&lt;strong&gt;真的&lt;/em&gt;是这个意思&lt;/strong&gt;.
+</code></pre><p>有些元素没有包含文本内容或者其他元素，这称为空元素。它们没有结束标签，请看下面例子:</p>
+<pre><code>&lt;img src=&quot;smileyface.jpg&quot; alt=&quot;Smiley face&quot; /&gt;
+</code></pre><p>一般在结束标签后面空格加上个斜杠</p>
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><p>开始标签可能包含一些信息，这些信息叫做元素的特性，包括两部分:</p>
+<ul>
+<li>特性名.</li>
+<li>特性值.</li>
+</ul>
+<p>一些元素可以只有特性名没有特性值。它们的特性名类似“是否”，“有或没有”，所以可以省略特性值，所以下面三种写法都是一样的意思:</p>
+<pre><code>&lt;input required=&quot;required&quot;&gt;
+
+&lt;input required=&quot;&quot;&gt;
+
+&lt;input required&gt;
+</code></pre><p>特性值如果有包含空格就要用引号，单双引号都可以。如果特性值是单个词就可以不用引号，但为了避免出错和易于识别一般会加上引号:</p>
+<pre><code>&lt;p class=foo bar&gt; &lt;!-- (当心，这可能不意味着你想象的意思。) --&gt;
+</code></pre><p>上面的例子就是没加引号，浏览器错误地解析成下面的:</p>
+<pre><code>&lt;p class=&quot;foo&quot; bar=&quot;&quot;&gt;
+</code></pre><h2 id="命名字符参考"><a href="#命名字符参考" class="headerlink" title="命名字符参考"></a>命名字符参考</h2><p>命名字符参考 (一般被称作实体) 用于表示在HTML中具有特定含义的字符. 举例说，HTML将“&gt;”和“&lt;”符号理解为标签分隔符。所以，当你想在文本中用”&gt;”符号表达“大于”的含义时，你可以使用命名字符参考来作为替代。 以下例举了四个非常重要的常用实体：</p>
+<ul>
+<li><code>&amp;gt;</code> 表示大于符号”&gt;” (&gt;)</li>
+<li><code>&amp;lt;</code> 表示小于符号”&lt;” (&lt;)</li>
+<li><code>&amp;amp;</code> 表示和符号”and”(&amp;)</li>
+<li><code>&amp;quot;</code> 表示引用符号” (“)</li>
+</ul>
+<p>除这四个外，还有许多其他的<a href="https://www.w3.org/TR/2011/WD-html5-20110113/named-character-references.html" target="_blank" rel="noopener">实体符号</a>, 但以上所举的例子是实体符号中最为重要的几个，原因在于他们所表示的原本字符在HTML中具有特定的含义。（即是说，如果你没有在HTML文本中使用实体符号来替代原本符号的话，浏览器可能会错误地理解你的意图。）</p>
+<h2 id="文档类型和注释"><a href="#文档类型和注释" class="headerlink" title="文档类型和注释"></a>文档类型和注释</h2><p>除标签，文本内容和实体外，一个HTML文档一定需要在第一行做出文档类型声明(doctype declaration)。在现代HTML中，这句声明书写如下：</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+</code></pre><p>文档类型声明的演变有着复杂深长的历史，但今天的我们只需知道上方的文档类型声明告诉了浏览器需要遵循W3C标准来解析HTML和CSS代码，且不必尝试去模拟90年代的IE环境。</p>
+<p>HTML拥有一个允许我们在HTML文档添加注释的机制。注释并不会在浏览器渲染页面时一并呈现给用户，而是隐藏在源代码内。这个机制使我们能十分方便地为HTML文档的某个部分添加注释信息、给你的同事预留便笺、或者给你自己做个提示。HTML注释被如下符号封闭：</p>
+<pre><code>&lt;!-- 这是评论文本 --&gt;
+</code></pre><h2 id="一个完整且精简的文档"><a href="#一个完整且精简的文档" class="headerlink" title="一个完整且精简的文档"></a>一个完整且精简的文档</h2><p>如下是一个迷你的HTML示例文档。你可以把这些代码复制到文本编辑器中，另存为myfirstdoc.html，然后用浏览器打开它。另外请注意，你需要确保使用了utf-8的编码格式保存了这份HTML示例文档。虽然我们没有为这份文档添加任何样式信息（从而让视觉效果显得十分朴素），但这总归算一个不错的开始，不是吗？祝你前路好运！</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot; /&gt;
+  &lt;title&gt;A tiny document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Main heading in my document&lt;/h1&gt;
+  &lt;!-- Note that it is &quot;h&quot; + &quot;1&quot;, not &quot;h&quot; + the letter &quot;one&quot; --&gt;
+  &lt;p&gt;Loook Ma, I am coding &lt;abbr title=&quot;Hyper Text Markup Language&quot;&gt;HTML&lt;/abbr&gt;.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p><a href="http://jsbin.com/cohodoyude/edit?html,output" target="_blank" rel="noopener">一个完整且精简的文档 demo</a></p>
+
+  </article>
+  <div class="random-toc-area">
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
+  <div class="random-toc">
+    <h2>目录</h2>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HTML基础"><span class="toc-text">HTML基础</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#引言"><span class="toc-text">引言</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是-HTML？"><span class="toc-text">什么是 HTML？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#元素——基本的构造区块"><span class="toc-text">元素——基本的构造区块</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#part-three"><span class="toc-text">part-three</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#标签"><span class="toc-text">标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#属性"><span class="toc-text">属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#命名字符参考"><span class="toc-text">命名字符参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文档类型和注释"><span class="toc-text">文档类型和注释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一个完整且精简的文档"><span class="toc-text">一个完整且精简的文档</span></a></li></ol></li></ol>
+  </div>
+</div>
+
+  
+<nav id="pagination">
+  
+    <a href="/2017/08/16/HTML5/" class="prev">&larr; 上一篇 HTML5</a>
+  
+
+  
+
+  
+</nav>
+
+  <!-- JiaThis Button BEGIN -->
+
+<!-- JiaThis Button END -->
+
+
+      
+      
+    </div>
+  </div>
+
+  <div id="bottom-outer">
+    <div id="bottom-inner">
+      Site by John Doe using
+      <a href="http://hexo.io">Hexo</a> & <a href="https://github.com/stiekel/hexo-theme-random">Random</a>
+      <br>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<div id="user-card">
+  <div class="center-field">
+    <img class="avatar" src="http://pic64.nipic.com/file/20150419/17961491_162225443000_2.jpg">
+    <p id="description"></p>
+    <ul class="social-icon">
+  
+  
+    <li>
+      <a href="https://github.com/stiekel/hexo-theme-random">
+        
+          <i class="icon iconfont github">&#xe606;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="https://coding.net/u/Stiekel">
+        
+          <i class="icon iconfont coding">&#xe607;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="https://twitter.com/SidCN">
+        
+          <i class="icon iconfont twitter">&#xe600;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="http://weibo.com/sidcn">
+        
+          <i class="icon iconfont weibo">&#xe602;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="http://www.douban.com/people/Stiekel/">
+        
+          <i class="icon iconfont douban">&#xe60f;</i>
+        
+      </a>
+    </li>
+  
+</ul>
+  </div>
+</div>
+
+
+<div id="btn-view">Hide</div>
+
+<script>
+// is trigger analytics / tongji script
+var isIgnoreHost = false;
+
+if(window && window.location && window.location.host) {
+  isIgnoreHost = ["localhost","127.0.0.1"].some(function(address){
+    return 0 === window.location.host.indexOf(address);
+  });
+}
+
+var isTriggerAnalytics = !( true && isIgnoreHost );
+
+</script>
+
+
+
+
+  
+  
+    <script src="/js/jquery-2.2.3.min.js"></script>
+  
+    <script src="/js/vegas.min.js"></script>
+  
+    <script src="/js/random.js"></script>
+  
+    <script src="/js/highlight.pack.js"></script>
+  
+    <script src="/js/jquery.mousewheel.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox-thumbs.js"></script>
+  
+    <script src="/js/plyr.js"></script>
+  
+
+<script>
+
+  // fancybox
+  var backgroundImages = [];
+  
+  $('#post').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox') || $(this).parent().hasClass('fancybox-thumb')) return;
+      var alt = this.alt || this.title;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'post' + i);
+    });
+  });
+  $(".fancybox").fancybox();
+
+var vegasConfig = {"preload­Image":true,"transition":["slideLeft2","slideRight2","flash2"],"timer":true,"delay":5000,"shuffle":true,"count":28};
+var unsplashConfig = {"gravity":"north"};
+// is show background images
+var turnoffBackgroundImage = false;
+
+
+
+  turnoffBackgroundImage = true;
+
+
+var backgroundColor = "34495E";
+
+$(".fancybox-thumb").fancybox({
+  prevEffect: 'none',
+  nextEffect: 'none',
+  helpers: {
+    title: {
+      type: 'outside'
+    },
+    thumbs: {
+      width: 50,
+      height: 50
+    }
+  }
+});
+
+// show video with plyr
+$(".video-container iframe").each(function(i){
+  var url = $(this).attr('src');
+  var id = url.split('/').pop();
+  var plyrContainer = document.createElement('div');
+  plyrContainer.className = 'plyr';
+  var plyrElement = document.createElement('div');
+  plyrElement.dataset.videoId = id;
+  switch(true) {
+    case url.search('youtube.com') >= 0:
+      plyrElement.dataset.type = 'youtube';
+      break;
+    case url.search('vimeo.com') >= 0:
+      plyrElement.dataset.type = 'vimeo';
+      break;
+    default:
+      return;
+  };
+  plyrContainer.appendChild(plyrElement);
+  $(this).parent().html(plyrContainer);
+});
+plyr.setup('.plyr', {iconUrl: '/css/sprite.svg'});
+</script>
+</body>
+</html>
+
